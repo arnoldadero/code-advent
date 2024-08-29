@@ -29,3 +29,12 @@ func (p Present) WrappingPaperRequired() int {
 	sort.Ints(sides)
 	return surfaceArea + sides[0] // Adding the smallest side as extra paper
 }
+// RibbonRequired calculates the ribbon required for wrapping and bow for a single present.
+func (p Present) RibbonRequired() int {
+	// Calculate the smallest perimeter
+	perimeter := []int{2 * (p.Length + p.Width), 2 * (p.Width + p.Height), 2 * (p.Height + p.Length)}
+	sort.Ints(perimeter)
+	// Calculate the ribbon needed for the bow
+	volume := p.Length * p.Width * p.Height
+	return perimeter[0] + volume
+}
