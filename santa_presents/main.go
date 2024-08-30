@@ -16,7 +16,9 @@ func main() {
 	// Calculate the number of houses that receive at least one present
 	moves := string(data)
 	housesCount := CountUniqueHouses(moves)
+	roboHousesCount := CountUniqueHousesWithRoboSanta(moves)
 
 	// Output the result
 	fmt.Printf("Number of unique houses that receive at least one present: %d\n", housesCount)
+	fmt.Printf("Number of unique houses that receive at least one present From Santa Robot: %d\n", roboHousesCount)
 }
