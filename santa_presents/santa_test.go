@@ -20,3 +20,21 @@ func TestCountUniqueHouses(t *testing.T) {
 		}
 	}
 }
+func TestCountUniqueHousesWithRoboSanta(t *testing.T) {
+	tests := []struct {
+		moves    string
+		expected int
+	}{
+		{"^v", 3},
+		{"^>v<", 3},
+		{"^v^v^v^v^v", 11},
+		{"^^vv<<>>", 3},
+	}
+
+	for _, test := range tests {
+		result := CountUniqueHousesWithRoboSanta(test.moves)
+		if result != test.expected {
+			t.Errorf("For moves '%s', expected %d but got %d", test.moves, test.expected, result)
+		}
+	}
+}
