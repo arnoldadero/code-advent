@@ -7,9 +7,11 @@ import (
 
 func main() {
 	secretKey := "iwrupvqb"
-	result, err := MineAdventCoin(secretKey, 5)
+
+	// search for the sx leading zeroes
+	result, err := MineAdventCoin(secretKey, 6)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("The lowest number for secret key %s is: %d\n", secretKey, result)
+	fmt.Printf("The lowest number for secret key %s with siz leading zeros is: %d\n", secretKey, result)
 }
