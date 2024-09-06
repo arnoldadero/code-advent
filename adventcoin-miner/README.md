@@ -35,3 +35,21 @@ Run the tests using:
 
 ```bash
 go test ./...
+
+'''
+
+## Part 2: Mining with Six Zeroes
+
+In this part, you need to find the lowest number such that the MD5 hash of the secret key combined with the number starts with **six leading zeroes**.
+
+### Example:
+
+- Secret key: `iwrupvqb`
+- The lowest number that produces a valid hash is `9958218`, because the MD5 hash of `iwrupvqb9958218` starts with `000000ab871...`.
+
+### How to Run
+
+Simply run the program again after updating it to search for six leading zeroes:
+
+```bash
+go run main.go

@@ -12,6 +12,7 @@ func TestMineAdventCoin(t *testing.T) {
 	}{
 		{"abcdef", 5, 609043},
 		{"pqrstuv", 5, 1048970},
+		{"iwrupvqb", 6, 9958218}, // Six zeroes case for iwrupvqb (expected result for Part 2)
 	}
 
 	for _, tc := range testCases {
