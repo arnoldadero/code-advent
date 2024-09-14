@@ -70,3 +70,42 @@ func TestFindShortestRoute(t *testing.T) {
 		t.Errorf("Expected shortest distance %d, got %d", expectedShortestDistance, shortestDistance)
 	}
 }
+
+// TestFindLongestRoute verifies that the longest route is found correctly
+func TestFindLongestRoute(t *testing.T) {
+	graph := Graph{
+		"A": {"B": 5, "C": 10},
+		"B": {"A": 5, "C": 7},
+		"C": {"A": 10, "B": 7},
+	}
+
+	expectedLongestDistance := 17 // A -> C -> B or C -> A -> B
+	longestDistance := FindLongestRoute(graph)
+	if longestDistance != expectedLongestDistance {
+		t.Errorf("Expected longest distance %d, got %d", expectedLongestDistance, longestDistance)
+	}
+}
+
+// Additional test cases for the new functionality
+func TestFindShortestAndLongestRoute(t *testing.T) {
+	// A more comprehensive test with multiple paths
+	graph := Graph{
+		"A": {"B": 5, "C": 10},
+		"B": {"A": 5, "C": 7},
+		"C": {"A": 10, "B": 7},
+	}
+
+	// Shortest route should be A -> B -> C or C -> B -> A (12)
+	expectedShortest := 12
+	shortest := FindShortestRoute(graph)
+	if shortest != expectedShortest {
+		t.Errorf("Expected shortest distance %d, got %d", expectedShortest, shortest)
+	}
+
+	// Longest route should be A -> C -> B or B -> C -> A (17)
+	expectedLongest := 17
+	longest := FindLongestRoute(graph)
+	if longest != expectedLongest {
+		t.Errorf("Expected longest distance %d, got %d", expectedLongest, longest)
+	}
+}

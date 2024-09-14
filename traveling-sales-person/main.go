@@ -23,4 +23,8 @@ func main() {
 	// Find and print the shortest route distance
 	shortestDistance := FindShortestRoute(graph)
 	fmt.Println("Shortest route distance:", shortestDistance)
+
+	// Find and print the longest route distance
+	longestDistance := FindLongestRoute(graph)
+	fmt.Println("Longest route distance:", longestDistance)
 }
