@@ -9,7 +9,7 @@ func main() {
 	input := "1321131112"
 
 	// Number of iterations
-	iterations := 40
+	iterations := 50
 
 	// Generate the look-and-say sequence for the given number of iterations
 	result := GenerateSequence(input, iterations)
